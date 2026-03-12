@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>お問い合わせ：ひいらぎ不動産</title>
+<link rel="stylesheet" href="css/mystyle.css">
+<meta name="description" content="ひいらぎ不動産のお問い合わせ先です。">
+<meta name="viewport" content="width=device-width">
+</head>
+<body>
+<header>
+<div class="header-in">
+<a href="index.html" id="pagetop"><img src="image/logo.png" width="300" height="56" alt="Hiiragi Real Estate"></a>
+<nav>
+<ul>
+<li><a href="index.html">トップ</a></li>
+<li><a href="point.html">物件選びのポイント</a></li>
+<li><a href="bukken01.html">おすすめ物件</a></li>
+<li><a href="company.html">会社案内</a></li>
+<li>お問い合わせ</li>
+</ul>
+</nav>
+</div>
+</header>
+<article class="page">
+<ol>
+<li><a href="index.html">トップ</a>&nbsp;&nbsp;&gt;</li>
+<li>お問い合わせ</li>
+</ol>
+<h1 class="sub-h1">お問い合わせ</h1>
+<p>フォームによるお問い合わせについては、多少お時間をいただく可能性がございます。お急ぎの場合は、お電話にてお問い合わせください。</p>
+<section>
+<h2>お電話によるお問い合わせ</h2>
+<ul>
+<li>電話番号：<strong>0120-XXX-XXX</strong></li>
+<li>営業時間：10時から21時まで（毎週月曜日定休）</li>
+</ul>
+</section>
+<section>
+<h2>フォームによるお問い合わせ</h2>
+<p>以下のフォームにご記入の上、送信してください。</p>
+<form action="ContactServlet" method="post">
+<p>
+<label for="username">名前（必須）：
+<input type="text" name="username" placeholder="全角で入力してください。" required>
+</label>
+</p>
+<p>
+<label for="userfurigana">フリガナ（任意）：
+<input type="text" name="userfurigana" placeholder="全角カタカナで入力してください。">
+</label>
+</p>
+<p>
+<label for="usertel">電話番号（必須）：
+<input type="tel" name="usertel" placeholder="ハイフンなしの半角数字で入力してください。" required>
+</label>
+</p>
+<p>
+<label for="usermail">メールアドレス（必須）：
+<input type="email" name="usermail" placeholder="半角で入力してください。" required>
+</label>
+</p>
+<p>希望地域(複数選択可)：<br>
+<input type="checkbox" name="userchiiki" id="saiwai" value="幸区">
+<label for="saiwai">幸区</label>
+<input type="checkbox" name="userchiiki" id="nakahara" value="中原区">
+<label for="nakahara">中原区</label>
+<input type="checkbox" name="userchiiki" id="shinai" value="その他川崎市内">
+<label for="shinai">その他川崎市内</label>
+<input type="checkbox" name="userchiiki" id="shigai" value="川崎市外">
+<label for="shigai">川崎市外</label>
+</p>
+<p>
+<label for="usercomment">お問い合わせ内容：
+<textarea name="usercomment" placeholder="できるだけ具体的な内容を入力してください"></textarea>
+</label>
+</p>
+<p>
+<button type="submit">送信</button>
+</p>
+</form>
+</section>
+</article>
+<footer>
+<p>川崎市のお部屋探しは「ひいらぎ不動産」におまかせください</p>
+<address>〒212-0014 神奈川県川崎市幸区大宮町1-5 JR川崎タワー<br>
+TEL 044-XXX-XXXX</address>
+<small>&copy; 2024 Hiiragi Real Estate. All Rights Reserved.</small>
+</footer>
+</body>
+</html>
