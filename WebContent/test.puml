@@ -1,0 +1,7 @@
+@startuml
+ユーザー -> ログイン画面 : アクセス
+ログイン画面 -> LoginServlet : ID/PW送信
+LoginServlet -> データベース : 照合
+データベース --> LoginServlet : OK
+LoginServlet --> ユーザー : ログイン成功
+@enduml
