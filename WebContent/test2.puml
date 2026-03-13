@@ -1,0 +1,72 @@
+@startuml
+title ひいらぎ不動産 - クラス図
+
+package "servlet" {
+    class ContactServlet {
+        - SESSION_ATTR_CONTACT: String
+        - TEL_PATTERN: Pattern
+        - MAIL_PATTERN: Pattern
+        # doGet()
+        # doPost()
+        - validate()
+    }
+
+    class LoginServlet {
+        # doGet()
+        # doPost()
+    }
+}
+
+package "model" {
+    class Contact <<Serializable>> {
+        - id: int
+        - name: String
+        - furigana: String
+        - tel: String
+        - mail: String
+        - chiiki: String[]
+        - comment: String
+        + getters/setters()
+    }
+
+    class ContactLogic {
+        + postContact(Contact): boolean
+        + getContactList(): List<Contact>
+    }
+
+    class Login {
+        - userId: String
+        - pass: String
+        + getUserId(): String
+        + getPass(): String
+    }
+
+    class LoginLogic {
+        + execute(Login): boolean
+    }
+}
+
+package "dao" {
+    class ContactDAO {
+        - JDBC_URL: String
+        + read(): List<Contact>
+        + create(Contact): boolean
+    }
+}
+
+' 関連・依存関係の定義
+ContactServlet ..> Contact : 使用
+ContactServlet ..> ContactLogic : 使用
+
+LoginServlet ..> Login : 使用
+LoginServlet ..> LoginLogic : 使用
+LoginServlet ..> ContactLogic : 使用 (管理者画面表示用)
+
+ContactLogic ..> ContactDAO : 使用
+ContactLogic ..> Contact : 扱う
+
+ContactDAO ..> Contact : 生成/登録
+
+LoginLogic ..> Login : 判定に使用
+
+@enduml
