@@ -97,4 +97,6 @@ public class Contact implements Serializable {
 		return chiiki;
 	}
 
+	//git練習中
+
 }
